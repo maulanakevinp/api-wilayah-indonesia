@@ -41,6 +41,6 @@ Route::group(['prefix' => 'wilayah'], function () {
 
     Route::get('/desa/{desa_id}', function ($request) {
         $indonesia = new IndonesiaService;
-        return $indonesia->findVillage($request);
+        return $indonesia->findVillage($request, ['district.city.province']);
     });
 });
